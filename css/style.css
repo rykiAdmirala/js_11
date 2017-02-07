@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #f8f8f8;
+    font: 16px Arial, sans-serif;
+}
+.wrapper {
+    width: 700px;
+    margin: 0 auto;
+    padding: 0 0 70px;
+}
+h1 {
+    margin: 1em 0 0;
+    text-align: center;
+}
+
+/* ** */
+.test-note {
+    margin: 6px 0 0;
+    font-size: 12px;
+    text-align: center;
+}
+.test-form {
+    margin: 30px 0 0;
+}
+.list li {
+    font-size: 20px;
+}
+.list input {
+    display: inline-block;
+    vertical-align: baseline;
+    margin: 0 1.1% 0 0;
+}
+.list .child-list {
+    margin: .6em 0 .6em 20px;
+    list-style: none;
+}
+.list .child-list li {
+    margin: 6px;
+    font-size: 16px;
+}
+.submit-btn {
+    display: block;
+    width: 400px;
+    margin: 40px auto 0;
+    padding: 15px 0;
+    background: #CFE2F3;
+    border: 2px solid #313134;
+    border-radius: 3px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background: #d6e7f5;
+}
+.submit-btn:active {
+    position: relative;
+    top: 2px;
+    outline: none;
+}
+.submit-btn:focus {
+    outline: none;
+}
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.52);
+    cursor: pointer;
+    z-index: 10;
+}
+.modal-wrap {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 15;
+}
+.modal-heading {
+    margin: 0 0 .6em;
+    font-size: 2em;
+    font-weight: bold;
+}
+.modal-close {
+    display: block;
+    width: 34%;
+    margin: 30px auto 0;
+    background: #5440c1;
+    border: 1px solid #4a4acc;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+    color: #fff;
+    font-size: 17px;
+    line-height: 30px;
+    cursor: pointer;
+}
+.modal-close:hover {
+    background: hsla(249, 51%, 57%, 1);
+}
+.modal-close:active {
+    position: relative;
+    top: 2px;
+}
+.modal-close:active,
+.modal-close:focus {
+    outline: none;
+}

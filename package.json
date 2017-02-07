@@ -1,0 +1,19 @@
+{
+  "name": "js_11",
+  "version": "1.0.0",
+  "description": "ДЗ #21-22",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rykiAdmirala/js_11.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rykiAdmirala/js_11/issues"
+  },
+  "homepage": "https://github.com/rykiAdmirala/js_11#readme"
+}

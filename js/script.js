@@ -1,51 +1,51 @@
 'use strict';
 
+var testContent = [
+    {
+        title: 'По чём в Одессе рубероид?',
+        answers: ['40 рублив','20 грывень','Неизмеримо','Большие, но по 5'],
+        correctAnswersIndex: [1]
+    },
+    {
+        title: 'Где живёт фазан?',
+        answers: ['У охотника дома','В замке','Маленькие, но по 3','Там, где больше платят'],
+        correctAnswersIndex: [0,3]
+    },
+    {
+        title: 'Какой ответ на главный вопрос Жизни, Вселенной и Всего Остального?',
+        answers: ['Мама мыла раму','Два с половиной человека','42','1,5 землекопа'],
+        correctAnswersIndex: [2]
+    }
+];
+
+// Saving to storage
+localStorage.setItem('testContent', JSON.stringify(testContent));
+
+// Retrieving from storage
+let data = JSON.parse(localStorage.getItem('testContent'));
+
+
 $(function() {
-
-    var testContent = [
-        {
-            title: 'По чём в Одессе рубероид?',
-            answers: ['40 рублив','20 грывень','Неизмеримо','Большие, но по 5'],
-            correctAnswersIndex: [1]
-        },
-        {
-            title: 'Где живёт фазан?',
-            answers: ['У охотника дома','В замке','Маленькие, но по 3','Там, где больше платят'],
-            correctAnswersIndex: [0,3]
-        },
-        {
-            title: 'Какой ответ на главный вопрос Жизни, Вселенной и Всего Остального?',
-            answers: ['Мама мыла раму','Два с половиной человека','42','1,5 землекопа'],
-            correctAnswersIndex: [2]
-        }
-    ];
-
-    // Saving to storage
-    localStorage.setItem('testContent', JSON.stringify(testContent));
-
-    // Retrieving from storage
-    let test = JSON.parse(localStorage.getItem('testContent'));
 
     // Initialising templating
     let tmplModel = $('#tmpl').html();
-    let testPage = tmpl(tmplModel, {
-        data : test
-    });
+    let testPage = tmpl(tmplModel, {data});
 
     // Displaying rendered page
     $('.wrapper').prepend(testPage);
 
 
 
-    /**
-     * Checking form for correct answers
-    **/
     const numOfQuestions = testContent.length;
     var countCorrectAnswers = 0;
     var countWrongAnswers = 0;
 
     $('.submit-btn').on('click', checkForm);
 
+
+    /**
+     * Checking form for correct answers
+    **/
     function checkForm(e) {
         // Preventing submit button from sending info to server
         e.preventDefault();
@@ -59,8 +59,8 @@ $(function() {
                 
                 let checkboxVal = parseInt($(input).val());
 
+                // Checking if value of given answer DOESN'T exist in array of correct answers
                 if (testContent[i].correctAnswersIndex.indexOf(checkboxVal) == -1) {
-                    // Checking if value of given answer DOESN'T exist in array of correct answers
                     countWrongAnswers++;
                 } else {
                     countCorrectAnswers++;
@@ -82,9 +82,7 @@ $(function() {
         let btnText;
 
         if (type == 'fail') {
-            modalMessage =
-                `<p class="modal-heading">Вы провалили тест!<p>
-                Вы предоставили <b>${countWrongAnswers}</b> неправильных ответов!`;
+            modalMessage = `<p class="modal-heading">Соряныч, попробуй ещё раз!`;
             btnText = `Okay(`;
         } else {
             modalMessage = `<p class="modal-heading">Congratz!</p>Вы успешно прошли тест, ура!`;
@@ -120,10 +118,3 @@ $(function() {
     }
 
 });
-
-
-$(function() {
-    $('.check-all').on('click',() => {
-        $('input').click();
-    })
-})

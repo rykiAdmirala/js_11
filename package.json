@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rykiAdmirala/js_11/issues"
   },
-  "homepage": "https://github.com/rykiAdmirala/js_11#readme"
+  "homepage": "https://github.com/rykiAdmirala/js_11#readme",
+  "devDependencies": {
+    "jasmine-jquery": "^2.1.1"
+  }
 }
